@@ -3,6 +3,7 @@ WORKDIR /src/build-your-own-radar
 COPY package.json ./
 RUN npm install
 COPY . ./
+ENV SKIP_GOOGLE_AUTH=true
 RUN npm run build
 
 FROM nginx:1.15.9
